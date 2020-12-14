@@ -34,9 +34,6 @@ class Parameters:
             if pickPlace[col][-1] != "N/M" and pickPlace[col][-1] != "VALUE":
                 buffer.append(pickPlace[col])
 
-        # Adicionando o cabeçalho
-        buffer.insert(0, ['Designator', 'Footprint', 'Mid X', 'Mid Y', 'Ref X', 'Ref Y',
-                          'Pad X', 'Pad Y', 'Layer', 'Rotation', 'Comment'])
         outline = ""
         # Juntando as linhas em um único vetor
         for i in range(len(buffer)):
@@ -44,6 +41,10 @@ class Parameters:
 
         # Ordenando
         buffer.sort()
+
+        # Adicionando o cabeçalho
+        buffer.insert(0, ",".join(['Designator', 'Footprint', 'Mid X', 'Mid Y', 'Ref X', 'Ref Y',
+                                   'Pad X', 'Pad Y', 'Layer', 'Rotation', 'Comment']) + "\n")
 
         # Juntando as informações a serem gravadas em uma única variável
         for i in range(len(buffer)):
