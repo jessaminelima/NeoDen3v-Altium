@@ -93,8 +93,8 @@ class FileConfigWindow(QWidget):
             for lin in range(len(pickPlace[col])):
                 pickPlace[col][lin] = pickPlace[col][lin].replace('"', '')
 
-            # Mirroring Bottom
-            if pickPlace[col][9] == "BottomLayer":
+            # Bottom Mirroring
+            if pickPlace[col][-3] == "BottomLayer":
                 pickPlace[col][2] = str("%.4f" % (x_size - float(pickPlace[col][2])))
                 pickPlace[col][4] = str("%.4f" % (x_size - float(pickPlace[col][4])))
                 pickPlace[col][6] = str("%.4f" % (x_size - float(pickPlace[col][6])))
