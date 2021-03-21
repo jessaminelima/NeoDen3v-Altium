@@ -1,5 +1,5 @@
-# NeoDen4-Altium
-Converts your Altium Designer exports into importable data for your Neoden 4 pick and place machine
+# NeoDen3v-Altium
+Converts your Altium Designer exports into importable data for your NeoDen3v pick and place machine
 
 Export your Pick and Place file from Altium Designer with metric (mm) units as a .csv file;
 
