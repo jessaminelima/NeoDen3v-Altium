@@ -3,13 +3,13 @@ Converts your Altium Designer exports into importable data for your NeoDen3v pic
 
 Export your Pick and Place file from Altium Designer with metric (mm) units as a .csv file;
 
-Place the .csv flie at data path of this program;
-
 Run app.py;
 
-Set the file name, don't forget to save;
+Open a file using the toolbar in the upper right corner;
 
-Go to File Configuration, the dimension of the plate on the X axis will be requested
+Go to File Configuration;
+
+Enter the size of the plate in the x-axis;
 
 In the same window click continue, a confirmation box will opened to inform you that it has been completed;
 
