@@ -81,10 +81,11 @@ class FileConfigWindow(QWidget):
         buffer = []
 
         # Removing "
-        for col in range(len(pickPlace)):
-            pickPlace[col] = (pickPlace[col].split(',"'))
-            for lin in range(len(pickPlace[col])):
-                pickPlace[col][lin] = pickPlace[col][lin].replace('"', '')
+        for lin in range(len(pickPlace)):
+            pickPlace[lin] = (pickPlace[lin].split(',"'))
+
+            for col in range(len(pickPlace[lin])):
+                pickPlace[lin][col] = pickPlace[lin][col].replace('"', '')
 
             # Mirroring Bottom
             if pickPlace[lin][-4] == "BottomLayer":
