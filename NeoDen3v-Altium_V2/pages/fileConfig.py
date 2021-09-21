@@ -87,17 +87,18 @@ class FileConfigWindow(QWidget):
                 pickPlace[col][lin] = pickPlace[col][lin].replace('"', '')
 
             # Mirroring Bottom
-            if pickPlace[col][-3] == "BottomLayer":
-                pickPlace[col][2] = str("%.4f" % (x_size - float(pickPlace[col][2])))
-                pickPlace[col][4] = str("%.4f" % (x_size - float(pickPlace[col][4])))
-                pickPlace[col][6] = str("%.4f" % (x_size - float(pickPlace[col][6])))
+            if pickPlace[lin][-4] == "BottomLayer":
+                pickPlace[lin][2] = str("%.4f" % (x_size - float(pickPlace[lin][2])))
+                pickPlace[lin][4] = str("%.4f" % (x_size - float(pickPlace[lin][4])))
+                pickPlace[lin][6] = str("%.4f" % (x_size - float(pickPlace[lin][6])))
 
             # Rotation Alteration
-            pickPlace[col][-2] = str((int(pickPlace[col][-2]) - 90))
+            pickPlace[lin][-3] = str((int(pickPlace[lin][-3]) - 90))
 
             # Removing N/M and TP's
-            if pickPlace[col][-1] != "N/M" and pickPlace[col][-1] != "VALUE":
-                buffer.append(pickPlace[col])
+            if pickPlace[lin][-1] != "NM" and pickPlace[lin][-2] != "N/M" and pickPlace[lin][-2] != "VALUE":
+                pickPlace[lin].pop(-1)  # Removing the last column created to inform NF components
+                buffer.append(pickPlace[lin])
 
         outline = ""
         # Joining to a single vector
